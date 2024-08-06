@@ -10,5 +10,4 @@ print(2+2*2 == (2+2)*2)
 #4th program
 x = str(123.456)
 x = str(int(float(x) * 10))
-y = slice(3,4)
-print(x[y])
+print(x[3])

@@ -1,10 +1,11 @@
-def get_matrix(n=1, m=1, value=0):
+def get_matrix(n, m, value):
+    if n == 0 or m == 0:
+        return ("Недопустимые параметры матрицы")
     matrix = []
-    for i in range(n):
-        column = []
-        matrix.append(column)
-        for c in range(m):
-            column.append(value)
+    for i in range(0, n):
+        matrix.append([])
+        for c in range(0, m):
+            matrix[i].append(value)
     return (matrix)
 
 result1 = get_matrix(2, 2, 10)

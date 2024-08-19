@@ -14,4 +14,7 @@ protopassword.sort()
 for i in range(0, len(protopassword)): # раскрытие вложенных списков
     password.append(protopassword[i][0])
     password.append(protopassword[i][1])
-print(*password)
+strpassword = ''
+for i in range(0, len(password)):
+    strpassword += str(password[i])
+print(strpassword)

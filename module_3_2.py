@@ -6,6 +6,7 @@ def проверка_почты (recipient, sender):
             if искомое in проверка:
                 return True
     return False
+    
 def send_email (message, recipient, sender = "university.help@gmail.com"):
     if recipient == sender:
         print(f'Нельзя отправить письмо самому себе!')

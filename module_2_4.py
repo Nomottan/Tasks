@@ -32,4 +32,3 @@ print(not_primes)
     #else:
         #not_primes.append(i)
 #print(primes)
-#print(not_primes)

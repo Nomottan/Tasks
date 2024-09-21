@@ -37,14 +37,6 @@ class House:
     def __iadd__(self, value):
         return self.__add__(value)
 
-    def go_to(self, new_floor):
-        num_of_floors = int(self.num_of_floors)
-        if new_floor > num_of_floors:
-            print (f"Этаж {new_floor} в здании {self.name} не существует")
-            return
-        for f in range(1, new_floor+1):
-            print(f)
-
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
 

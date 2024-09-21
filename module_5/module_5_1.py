@@ -8,8 +8,6 @@ class House:
             print (f"Этаж {new_floor} в здании {self.name} не существует")
             return
         for f in range(1, new_floor):
-            if f == 0:
-                continue
             print(f)
 
 

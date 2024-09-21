@@ -7,7 +7,7 @@ class House:
         if new_floor > num_of_floors:
             print (f"Этаж {new_floor} в здании {self.name} не существует")
             return
-        for f in range(1, new_floor):
+        for f in range(1, new_floor+1):
             print(f)
 
 

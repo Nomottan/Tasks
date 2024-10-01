@@ -10,22 +10,40 @@ class House:
         return self.name
 
     def __eq__(self, other):
-        return self.num_of_floors == other.num_of_floors
+        if isinstance(other, House):
+            return self.num_of_floors == other.num_of_floors
+        elif isinstance(other, int):
+            return self.num_of_floors == other
 
     def __lt__(self, other):
-        return self.num_of_floors < other.num_of_floors
+        if isinstance(other, House):
+            return self.num_of_floors < other.num_of_floors
+        elif isinstance(other, int):
+            return self.num_of_floors < other
 
     def __le__(self, other):
-        return self.num_of_floors <= other.num_of_floors
+        if isinstance(other, House):
+            return self.num_of_floors <= other.num_of_floors
+        elif isinstance(other, int):
+            return self.num_of_floors <= other
 
     def __gt__(self, other):
-        return self.num_of_floors > other.num_of_floors
+        if isinstance(other, House):
+            return self.num_of_floors > other.num_of_floors
+        elif isinstance(other, int):
+            return self.num_of_floors > other
 
     def __ge__(self, other):
-        return self.num_of_floors >= other.num_of_floors
+        if isinstance(other, House):
+            return self.num_of_floors >= other.num_of_floors
+        elif isinstance(other, int):
+            return self.num_of_floors >= other
 
     def __ne__(self, other):
-        return self.num_of_floors != other.num_of_floors
+        if isinstance(other, House):
+            return self.num_of_floors != other.num_of_floors
+        elif isinstance(other, int):
+            return self.num_of_floors != other
 
     def __add__(self, value):
         self.num_of_floors += value

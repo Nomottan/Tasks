@@ -12,9 +12,9 @@ class Iterator:
             else:
                 self.step = -1
         else:
-            if self.stop > self.start and self.step <= 0:
+            if self.stop > self.start and step <= 0:
                 raise StepValueError
-            if self.stop < self.start and self.step >= 0:
+            if self.stop < self.start and step >= 0:
                 raise StepValueError
             self.step = step
         self.pointer = start

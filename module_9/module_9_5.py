@@ -2,15 +2,22 @@ class StepValueError(ValueError):
     pass
 
 class Iterator:
-    def __init__(self, start, stop, step=1):
-        if stop > start and step <= 0:
-            raise StepValueError
-        if stop < start and step >= 0:
-            raise StepValueError
+    def __init__(self, start, stop, step=None):
         self.start = start
         self.stop = stop
-        self.step = step
+        if step is None:
+            if self.stop > self.start:
+                self.step = 1
+            else:
+                self.step = -1
+        else:
+            self.step = step
         self.pointer = start
+        if self.stop > self.start and self.step <= 0:
+            raise StepValueError
+        if self.stop < self.start and self.step >= 0:
+            raise StepValueError
+
 
     def __iter__(self):
         self.pointer = self.start
@@ -23,6 +30,7 @@ class Iterator:
         if self.pointer < self.stop < self.start:
             raise StopIteration
         return self.pointer
+
 try:
     iter1 = Iterator(100, 200, 0)
     for i in iter1:
@@ -48,3 +56,4 @@ print()
 for i in iter5:
     print(i, end=' ')
 print()
+

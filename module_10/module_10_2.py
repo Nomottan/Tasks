@@ -29,3 +29,4 @@ second_knight.start()
 first_knight.join()
 second_knight.join()
 
+print(f'Все битвы закончились!')

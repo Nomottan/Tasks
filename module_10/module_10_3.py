@@ -11,7 +11,7 @@ class Bank:
     def deposit(self):
         count = 0
         while count != 100:
-            if self.balance > 500:
+            if self.balance > 500 and self.lock.locked():
                 self.lock.release()
             dep = randint(50, 500)
             self.balance += dep

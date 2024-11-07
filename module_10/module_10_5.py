@@ -17,7 +17,6 @@ print(f"{round(end-start, 6)} (линейный)")
 start = time()
 
 if __name__ == '__main__':
-    filenames = [f'./file {number}.txt' for number in range(1, 5)]
     for file in filenames:
         proc = Process(target=read_info, args=(file, ))
         proc.start()

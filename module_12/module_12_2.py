@@ -17,10 +17,10 @@ class TournamentTest(unittest.TestCase):
             print(result)
 
     def TourTest(self):
-        tour = testRunner.Tournament(90, (self.runner1, self.runner3))
-        tourresult = tour.start()
-        self.all_results.copy(tourresult)
-        self.assertTrue(self.all_results["2"] == "Ник")
+        tour = testRunner.Tournament(90, (self.runner1, self.runner3)) #создание объекта Tournament
+        tourresult = tour.start() # вызов метода "stаrt" в объекте Tournament
+        self.all_results.copy(tourresult) # сохранение результатов в список
+        self.assertTrue(self.all_results["2"] == "Ник") #проверка результата по ключу в словаре
         tour2 = testRunner.Tournament(90, (self.runner2, self.runner3))
         tourresult1 = tour2.start()
         self.all_results.copy(tourresult1)

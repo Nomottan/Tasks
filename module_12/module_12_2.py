@@ -21,15 +21,16 @@ class TournamentTest(unittest.TestCase):
         tour = testRunner.Tournament(90, (self.runner1, self.runner3))   # создание объекта Tournament
         tourresult = tour.start()                                                           # вызов метода "stаrt" в объекте Tournament
         self.all_results.copy(tourresult)                                                   # сохранение результатов в список
-        self.assertTrue(self.all_results[2] == "Ник")                                     # проверка результата по ключу в словаре
+        self.assertTrue(tourresult[2] == "Ник")                                     # проверка результата по ключу в словаре
         tour2 = testRunner.Tournament(90, (self.runner2, self.runner3))
         tourresult1 = tour2.start()
         self.all_results.copy(tourresult1)
-        self.assertTrue(self.all_results[2] == "Ник")
+        self.assertTrue(tourresult1[2] == "Ник")
         tour3 = testRunner.Tournament(90, (self.runner1, self.runner2, self.runner3))
         tourresult2 = tour3.start()
         self.all_results.copy(tourresult2)
-        self.assertTrue(self.all_results[3] == "Ник")
+        self.assertTrue(tourresult2[3] == "Ник")
 
 
 if __name__ == "__main__":
+    unittest.main()

@@ -14,28 +14,33 @@ class TournamentTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(self):
-        for result in self.all_results:
-            print(result)
+        for k, v in self.all_results.items():
+            print(f"{k}: {str(v)}")
 
-    def TourTest(self):
-        tour = testRunner.Tournament(90, (self.runner1, self.runner3))
+    def test_Tour(self):
+        tour = testRunner.Tournament(90, self.runner1, self.runner3)
         tour_result = tour.start()
-        new_keys = {len(self.__class__.all_result) + k: v for k, v in tour_result.items()}
+        new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
         self.__class__.all_results.update(new_keys)
+        print(self.__class__.all_results)
         self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
-        # tour2 = testRunner.Tournament(90, (self.runner2, self.runner3))
-        # tour2_result = tour2.start()
-        # new_keys = {len(self.all_result) + k: v for k, v in tour2_result.items()}
-        # self.all_results.update(new_keys)
-        # self.assertTrue(tour2_result[max(tour2_result.keys())])
-        # tour3 = testRunner.Tournament(90, (self.runner1, self.runner2, self.runner3))
-        # tour3_result = tour3.start()
-        # new_keys = {len(self.all_result) + k: v for k, v in tour3_result.items()}
-        # self.all_results.update(new_keys)
-        # self.assertTrue(tour_result[max(tour3_result.keys())])
 
+    def test_Tour2(self):
+        tour = testRunner.Tournament(90, self.runner2, self.runner3)
+        tour_result = tour.start()
+        new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
+        self.__class__.all_results.update(new_keys)
+        print(self.__class__.all_results)
+        self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
+
+    def test_Tour3(self):
+        tour = testRunner.Tournament(90, self.runner1, self.runner2, self.runner3)
+        tour_result = tour.start()
+        new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
+        self.__class__.all_results.update(new_keys)
+        print(self.__class__.all_results)
+        self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
 
 if __name__ == "__main__":
     unittest.main()
-
 

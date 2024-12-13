@@ -22,7 +22,6 @@ class TournamentTest(unittest.TestCase):
         tour_result = tour.start()
         new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
         self.__class__.all_results.update(new_keys)
-        print(self.__class__.all_results)
         self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
 
     def test_Tour2(self):
@@ -30,7 +29,6 @@ class TournamentTest(unittest.TestCase):
         tour_result = tour.start()
         new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
         self.__class__.all_results.update(new_keys)
-        print(self.__class__.all_results)
         self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
 
     def test_Tour3(self):
@@ -38,7 +36,6 @@ class TournamentTest(unittest.TestCase):
         tour_result = tour.start()
         new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
         self.__class__.all_results.update(new_keys)
-        print(self.__class__.all_results)
         self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
 
 if __name__ == "__main__":

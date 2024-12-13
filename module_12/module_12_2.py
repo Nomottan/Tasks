@@ -3,6 +3,7 @@ import unittest
 
 
 class TournamentTest(unittest.TestCase):
+    is_frozen = True
     def setUp(self):
         self.runner1 = testRunner.Runner("Усейн", 10)
         self.runner2 = testRunner.Runner("Андрей", 9)
@@ -17,6 +18,7 @@ class TournamentTest(unittest.TestCase):
         for k, v in self.all_results.items():
             print(f"{k}: {str(v)}")
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_Tour(self):
         tour = testRunner.Tournament(90, self.runner1, self.runner3)
         tour_result = tour.start()
@@ -24,6 +26,7 @@ class TournamentTest(unittest.TestCase):
         self.__class__.all_results.update(new_keys)
         self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_Tour2(self):
         tour = testRunner.Tournament(90, self.runner2, self.runner3)
         tour_result = tour.start()
@@ -31,6 +34,7 @@ class TournamentTest(unittest.TestCase):
         self.__class__.all_results.update(new_keys)
         self.assertTrue(tour_result[max(tour_result.keys())] == self.runner3)
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_Tour3(self):
         tour = testRunner.Tournament(90, self.runner1, self.runner2, self.runner3)
         tour_result = tour.start()

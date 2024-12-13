@@ -1,0 +1,16 @@
+WARNING | TypeError
+Traceback (most recent call last):
+  File "E:\Users\PycharmProjects\pythonProject\module_12\tests_12_4.py", line 24, in test_run
+    testrun = Runner(15, 15)
+              ^^^^^^^^^^^^^^
+  File "E:\Users\PycharmProjects\pythonProject\module_12\testRunnerext.py", line 6, in __init__
+    raise TypeError(f'Имя может быть только строкой, передано {type(name).__name__}')
+TypeError: Имя может быть только строкой, передано int
+WARNING | ValueError
+Traceback (most recent call last):
+  File "E:\Users\PycharmProjects\pythonProject\module_12\tests_12_4.py", line 11, in test_walk
+    testwalk = Runner("test", -5)
+               ^^^^^^^^^^^^^^^^^^
+  File "E:\Users\PycharmProjects\pythonProject\module_12\testRunnerext.py", line 11, in __init__
+    raise ValueError(f'Скорость не может быть отрицательной, сейчас {speed}')
+ValueError: Скорость не может быть отрицательной, сейчас -5

@@ -28,16 +28,13 @@ class RunnerTest(unittest.TestCase):
             testrun.run()
         self.assertNotEqual(testrun.distance, testwalk.distance)
 
-import testRunner
-import unittest
-
 
 class TournamentTest(unittest.TestCase):
     is_frozen = True
     def setUp(self):
-        self.runner1 = testRunner.Runner("Усейн", 10)
-        self.runner2 = testRunner.Runner("Андрей", 9)
-        self.runner3 = testRunner.Runner("Ник", 3)
+        self.runner1 = Runner("Усейн", 10)
+        self.runner2 = Runner("Андрей", 9)
+        self.runner3 = Runner("Ник", 3)
 
     @classmethod
     def setUpClass(self):
@@ -50,7 +47,7 @@ class TournamentTest(unittest.TestCase):
 
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_Tour(self):
-        tour = testRunner.Tournament(90, self.runner1, self.runner3)
+        tour = Tournament(90, self.runner1, self.runner3)
         tour_result = tour.start()
         new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
         self.__class__.all_results.update(new_keys)
@@ -58,7 +55,7 @@ class TournamentTest(unittest.TestCase):
 
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_Tour2(self):
-        tour = testRunner.Tournament(90, self.runner2, self.runner3)
+        tour = Tournament(90, self.runner2, self.runner3)
         tour_result = tour.start()
         new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
         self.__class__.all_results.update(new_keys)
@@ -66,7 +63,7 @@ class TournamentTest(unittest.TestCase):
 
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_Tour3(self):
-        tour = testRunner.Tournament(90, self.runner1, self.runner2, self.runner3)
+        tour = Tournament(90, self.runner1, self.runner2, self.runner3)
         tour_result = tour.start()
         new_keys = {len(self.__class__.all_results) + k: v for k, v in tour_result.items()}
         self.__class__.all_results.update(new_keys)

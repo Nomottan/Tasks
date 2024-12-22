@@ -17,7 +17,7 @@ with sql.connect("not_telegram.db") as con:
         cursor.execute(
             "INSERT INTO Users(username, email, age, balance) "
             "VALUES(?, ?, ?, ?)",
-            (f'User{i}', f'example{i}@gmail.com', f'{10*i}', f'{1000*i}')
+            (f'User{i}', f'example{i}@gmail.com', f'{10*i}', f'{1000}')
         )
 
     for i in range(1, 11, 2):

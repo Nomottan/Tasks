@@ -58,8 +58,7 @@ async def info(message):
 
 @dp.message_handler(text=['Рассчитать'])
 async def set_age(message):
-    await message.message.answer(f"Введите свой возраст:", reply_markup = ReplyKeyboardRemove())
-    await message.answer()
+    await message.answer(f"Введите свой возраст:", reply_markup = ReplyKeyboardRemove())
     await UserState.age.set()
 
 

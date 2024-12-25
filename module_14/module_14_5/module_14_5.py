@@ -15,7 +15,7 @@ from aiogram.types import (InlineKeyboardMarkup,
                            ReplyKeyboardRemove)
 
 
-api = "7726405232:AAGizj4ox2RWHbJCid76XWZQlg-SkbIJxcg"
+api = ""
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 

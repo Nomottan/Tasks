@@ -17,8 +17,6 @@ async def get_all_users() -> List[User]:
     return users
 
 
-@app.post("/user/{username}/{age}")
-
 @app.post('/user/{username}/{age}')
 async def add_user(username: str, age: str) -> User:
     user_id = max(users, key=lambda x: int(x.id)).id + 1 if users else 1

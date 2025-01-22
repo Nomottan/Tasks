@@ -37,13 +37,13 @@ async def update_user(user_id: int, username: str, age: int) -> str:
         raise HTTPException(status_code=404, detail="User was not found")
 
 
-
 @app.delete("/user/{user_id}")
 async def delete_user(user_id: int) -> str:
     try:
         user = [us for us in users if us.id == user_id]
         user = user[0]
-        users.pop(user)
+        users.remove(user)
         return f"User {user_id} has been deleted"
     except IndexError:
         raise HTTPException(status_code=404, detail="User was not found")
+
